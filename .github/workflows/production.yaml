@@ -2,7 +2,7 @@ name: Deploy feature branches to non production bucket
 on: 
   push:
     branches: 
-      - feature*
+      - main
 
 permissions:
   id-token: write
@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      BUCKET_NAME: non-prod-bucket-page
+      BUCKET_NAME: prod-bucket-page
     steps: 
      - name: Check out code
        uses: actions/checkout@v2
